@@ -1,7 +1,7 @@
 using API.Data;
 using API.Extensions;
 using API.Interfaces;
-using API.Middelware;
+using API.Middleware;
 using API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
