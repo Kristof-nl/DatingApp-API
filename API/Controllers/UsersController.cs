@@ -35,17 +35,17 @@ namespace API.Controllers
         }
 
         
-        [HttpGet("{username}")]
-        public async Task<ActionResult<MemberDto>> GetUser(string username)
+        [HttpGet("{Username}")]
+        public async Task<ActionResult<MemberDto>> GetUser(string Username)
         {
-            return await _userRepository.GetMemberAsync(username);
+            return await _userRepository.GetMemberAsync(Username);
         }
 
         [HttpPut]
         public async Task<ActionResult> UpdateUser(MemberUpdateDto memberUpdateDto)
         {
-            var userName = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            var user = await _userRepository.GetUserByUsernameAsync(userName);
+            var Username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var user = await _userRepository.GetUserByUsernameAsync(Username);
 
             _mapper.Map(memberUpdateDto, user);
 
